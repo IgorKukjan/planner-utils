@@ -11,6 +11,7 @@ import ru.javabegin.micro.planner.entity.User;
 public class UserWebClientBuilder {
 
     private static final String baseUrl = "http://localhost:8765/planner-users/user/";
+    private static final String baseUrlData = "http://localhost:8765/planner-todo/data/";
 
     // проверка - существует ли пользователь
     public boolean userExists(Long userId) {
@@ -45,6 +46,18 @@ public class UserWebClientBuilder {
                 .bodyValue(userId)
                 .retrieve()
                 .bodyToFlux(User.class);
+
+        return fluxUser;
+    }
+
+    //иниц. начальных данных
+    public Flux<Boolean> initUserData(Long userId){
+        Flux<Boolean> fluxUser = WebClient.create(baseUrlData)
+                .post()
+                .uri("init")
+                .bodyValue(userId)
+                .retrieve()
+                .bodyToFlux(Boolean.class);
 
         return fluxUser;
     }
