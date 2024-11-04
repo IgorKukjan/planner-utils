@@ -1,4 +1,4 @@
-package ru.javabegin.micro.planner.utils.resttemplate;
+package ru.javabegin.micro.planner.utils.rest.resttemplate;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
