@@ -1,13 +1,13 @@
-package ru.javabegin.micro.planner.utils;
+package ru.javabegin.micro.planner.utils
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
-public class PlannerUtilsApplication {
+open class PlannerUtilsApplication
 
-    public static void main(String[] args) {
-        SpringApplication.run(PlannerUtilsApplication.class, args);
-    }
-
+fun main(args: Array<String>) {
+     runApplication<PlannerUtilsApplication>(*args)
 }
+
